@@ -1,5 +1,6 @@
 .main {
   margin: auto;
+  margin-top: 5%;
   width: 50%;
   height: 95vh;
 }
@@ -81,6 +82,7 @@
 @media (max-width: 768px) {
   .main {
     margin: 0px;
+    margin-top: 10%;
     width: 100%;
   }
 

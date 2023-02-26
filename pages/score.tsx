@@ -3,12 +3,29 @@ import React, { Component, Fragment, useEffect, useState } from "react";
 import styles from "../styles/score.module.css";
 import Axios from "axios";
 import Link from "next/link";
+import Swal from "sweetalert2";
+import { useRouter } from "next/router";
 
 const score = () => {
+  const router = useRouter();
+
   const [score, setScore] = useState("");
+
   useEffect(() => {
     setScore(localStorage.getItem("score"));
   }, []);
+
+  const handleLogout = () => {
+    Swal.fire({
+      title: "Are you sure you want to logout?",
+      showCancelButton: true,
+      confirmButtonColor: "#5f2eea",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        router.push("/");
+      }
+    });
+  };
 
   return (
     <>
@@ -19,9 +36,9 @@ const score = () => {
           <Link href="/main">
             <button className={styles["button-1"]}>Try again?</button>
           </Link>
-          <Link href="/">
-            <button className={styles["button-1"]}>Logout</button>
-          </Link>
+          <button onClick={handleLogout} className={styles["button-1"]}>
+            Logout
+          </button>
         </div>
       </main>
     </>

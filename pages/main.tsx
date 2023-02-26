@@ -17,10 +17,11 @@ const Main = () => {
   }
 
   const router = useRouter();
+
   const [question, setQuestion] = useState<ApiResponse[]>([]);
   const [number, setNumber] = useState(0);
   const [answer, setAnswer] = useState([]);
-  const [userAnswer, setUserAnswer] = useState([""]);
+  const [userAnswer, setUserAnswer] = useState([]);
   const [correctAnswer, setCorrectAnswer] = useState([]);
   const [score, setScore] = useState(0);
   const [currentAnswer, setCurrentAnswer] = useState("");

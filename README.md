@@ -18,7 +18,6 @@
 - [How to install](#how-to-install)
 - [Deployment](#deployment)
 - [Screenshots](#screenshots)
-<!-- - [Related Projects](#related-projects) -->
 - [Contributors](#contributors)
 
 ## System Explanation

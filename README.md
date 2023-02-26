@@ -79,11 +79,11 @@ You may also see any lint errors in the console.
 ## Screenshots
 
 <div align="center">
-<img width="500" src="https://raw.githubusercontent.com/rsad100/project-lamar-kerja-1/main/assets/signin.PNG" alt="Signin page">
+<img width="500" src="https://raw.githubusercontent.com/rsad100/Project-Lamar-Kerja-1/main/assets/signin.png" alt="Signin page">
 
-<img width="500" src="https://raw.githubusercontent.com/rsad100/project-lamar-kerja-1/main/assets/main.JPG" alt="Quiz page">
+<img width="500" src="https://raw.githubusercontent.com/rsad100/Project-Lamar-Kerja-1/main/assets/main.png" alt="Quiz page">
 
-<img width="500" src="https://raw.githubusercontent.com/rsad100/project-lamar-kerja-1/main/assets/score.PNG" alt="Score page">
+<img width="500" src="https://raw.githubusercontent.com/rsad100/Project-Lamar-Kerja-1/main/assets/score.png" alt="Score page">
 
 </div>
 

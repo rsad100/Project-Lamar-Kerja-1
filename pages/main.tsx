@@ -3,6 +3,8 @@ import React, { Component, Fragment, useEffect, useState } from "react";
 import styles from "../styles/main.module.css";
 import Axios from "axios";
 import Link from "next/link";
+import Swal from "sweetalert2";
+import { useRouter } from "next/router";
 
 const Main = () => {
   interface ApiResponse {
@@ -14,6 +16,7 @@ const Main = () => {
     type: string;
   }
 
+  const router = useRouter();
   const [question, setQuestion] = useState<ApiResponse[]>([]);
   const [number, setNumber] = useState(0);
   const [answer, setAnswer] = useState([]);
@@ -75,6 +78,28 @@ const Main = () => {
       }
     }
     localStorage.setItem("score", String(count));
+    Swal.fire({
+      title: "Are you sure?",
+      text: `You have answered ${userAnswer.length} out of ${question.length} of questions, you can't revert this decision!`,
+      showCancelButton: true,
+      confirmButtonColor: "#5f2eea",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        router.push("/score");
+      }
+    });
+  };
+
+  const handleLogout = () => {
+    Swal.fire({
+      title: "Are you sure you want to logout?",
+      showCancelButton: true,
+      confirmButtonColor: "#5f2eea",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        router.push("/");
+      }
+    });
   };
 
   // console.log(question[0]?.category);
@@ -131,11 +156,9 @@ const Main = () => {
               Previous
             </button>
             {number === question.length - 1 ? (
-              <Link href="/score">
-                <button className={styles["button-1"]} onClick={handleScore}>
-                  Submit
-                </button>
-              </Link>
+              <button className={styles["button-1"]} onClick={handleScore}>
+                Submit
+              </button>
             ) : (
               <button
                 className={styles["button-1"]}
@@ -149,9 +172,9 @@ const Main = () => {
               </button>
             )}
           </div>
-          <Link href="/">
-            <button className={styles["button-1"]}>Logout</button>
-          </Link>
+          <button onClick={handleLogout} className={styles["button-1"]}>
+            Logout
+          </button>
         </div>
       </div>
     </div>

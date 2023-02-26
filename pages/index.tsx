@@ -1,10 +1,26 @@
 import React, { useEffect, useState } from "react";
-// import Head from "next/head";
 import styles from "../styles/index.module.css";
 import Axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import Swal from "sweetalert2";
 
 const Login = () => {
+  const router = useRouter();
+
+  const handleSubmit = () => {
+    Swal.fire({
+      title: "Login success!",
+      timer: 1000,
+      timerProgressBar: true,
+      showConfirmButton: false,
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.timer) {
+        router.push("/main");
+      }
+    });
+  };
+
   return (
     <main className={styles["main"]}>
       <div className={styles["div-1"]}>
@@ -26,9 +42,11 @@ const Login = () => {
           />
         </div>
         <div className={styles["button-div-1"]}>
-          <Link href="/main">
-            <button className={styles["button-1"]}>Login</button>
-          </Link>
+          {/* <Link href="/main"> */}
+          <button onClick={handleSubmit} className={styles["button-1"]}>
+            Login
+          </button>
+          {/* </Link> */}
           <button className={styles["button-1"]}>Register</button>
         </div>
       </div>

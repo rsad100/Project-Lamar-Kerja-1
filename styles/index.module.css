@@ -77,3 +77,44 @@
   padding-right: 24px;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .main {
+    margin: 0px;
+    width: 100%;
+  }
+
+  .div-1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .div-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+  }
+
+  .button-div-1 {
+    bottom: 60px;
+    display: flex;
+    column-gap: 10px;
+    margin: auto;
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .input-1 {
+    height: 64px;
+    border-radius: 16px;
+    background-color: #fcfdfe;
+    border: 1px solid #dedede;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: auto;
+  }
+}

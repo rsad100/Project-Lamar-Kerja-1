@@ -39,6 +39,9 @@ const Main = () => {
   }
 
   useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      router.push("/");
+    }
     const url = "https://opentdb.com/api.php?amount=4";
     localStorage.setItem("score", String(0));
     Axios.get(url)

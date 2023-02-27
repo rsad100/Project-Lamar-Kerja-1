@@ -11,6 +11,9 @@ const score = () => {
   const [score, setScore] = useState("");
 
   useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      router.push("/");
+    }
     setScore(localStorage.getItem("score"));
   }, []);
 

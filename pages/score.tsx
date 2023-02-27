@@ -1,7 +1,6 @@
 import React, { Component, Fragment, useEffect, useState } from "react";
 // import Head from "next/head";
 import styles from "../styles/score.module.css";
-import Axios from "axios";
 import Link from "next/link";
 import Swal from "sweetalert2";
 import { useRouter } from "next/router";
@@ -22,6 +21,7 @@ const score = () => {
       confirmButtonColor: "#5f2eea",
     }).then((result) => {
       if (result.isConfirmed) {
+        localStorage.removeItem("token");
         router.push("/");
       }
     });

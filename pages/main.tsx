@@ -98,6 +98,7 @@ const Main = () => {
       confirmButtonColor: "#5f2eea",
     }).then((result) => {
       if (result.isConfirmed) {
+        localStorage.removeItem("token");
         router.push("/");
       }
     });
